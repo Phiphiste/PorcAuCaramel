@@ -27,7 +27,7 @@ namespace WpfApp1
 
         public VM()
         {
-            model = new Model("C:/Users/jeanl/source/repos/WpfApp1/WpfApp1/country-capitals.csv");
+            model = new Model("../../country-capitals.csv");
 
             foreach (KeyValuePair<string, String> c in model.Countries)
             {
