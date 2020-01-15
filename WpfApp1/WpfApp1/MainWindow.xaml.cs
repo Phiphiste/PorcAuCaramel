@@ -28,7 +28,8 @@ namespace WpfApp1
 
         private void Rechercher(object sender, RoutedEventArgs e)
         {
-           
+            Country selected = (Country) CountriesComboBox.SelectedItem;
+            MessageBox.Show(selected.capital);
         }
     }
 }

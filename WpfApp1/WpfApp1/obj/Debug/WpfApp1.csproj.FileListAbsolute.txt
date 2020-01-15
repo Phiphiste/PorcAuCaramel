@@ -24,6 +24,5 @@ C:\Users\arnau\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\De
 C:\Users\arnau\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1.g.resources
 C:\Users\arnau\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
 C:\Users\arnau\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
-C:\Users\arnau\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
 C:\Users\arnau\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\arnau\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb

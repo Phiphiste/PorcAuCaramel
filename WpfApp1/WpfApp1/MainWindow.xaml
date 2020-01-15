@@ -7,10 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
-        <ComboBox  ItemsSource="{Binding Countries}" DisplayMemberPath="name"  Width="150" />
-        <Button x:Name="MonPremierBouton" Click="Rechercher"> Rechercher </Button>
-        <Label x:Name="LabelCapital">
-            <TextBlock TextWrapping="Wrap" Text="{Binding currentCapital}"/>
-        </Label>
+        <ComboBox  x:Name="CountriesComboBox" ItemsSource="{Binding Countries}" DisplayMemberPath="name"  Width="150" Margin="161,50,161,0" />
+        <Button x:Name="MonPremierBouton" Click="Rechercher" Margin="161,50,161,0" Content="Rechercher"/>
     </StackPanel>
 </Window>

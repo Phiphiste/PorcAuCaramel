@@ -54,10 +54,10 @@ namespace WpfApp1
         public String name { get; set; }
         public String capital { get; set; }
         public Country (String n, String c)
-            {
+        {
             name = n;
             capital = c;
-            }
+        }
             
     }
 }
