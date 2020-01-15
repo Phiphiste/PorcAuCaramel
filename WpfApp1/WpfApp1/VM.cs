@@ -10,8 +10,6 @@ namespace WpfApp1
 {
     class VM : INotifyPropertyChanged
     {
-
-
         public String currentCapital;
         public Model model;
         public ObservableCollection<Country> countries = new ObservableCollection<Country>();
@@ -36,7 +34,18 @@ namespace WpfApp1
             currentCapital = "oui";
         }
 
-        
+        public String CurrentCapital
+        {
+            get { return this.currentCapital; }
+
+            set
+            {
+                this.currentCapital = value;
+                OnPropertyChanged("CurrentCapital");
+            }
+        }
+
+
         public ObservableCollection<Country> Countries
             {
             get { return this.countries; }
