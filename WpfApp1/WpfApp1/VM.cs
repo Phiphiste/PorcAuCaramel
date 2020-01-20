@@ -31,7 +31,7 @@ namespace WpfApp1
             {
                 countries.Add(new Country(c.Key, c.Value));
             }
-            currentCapital = "oui";
+            currentCapital = "";
         }
 
         public String CurrentCapital

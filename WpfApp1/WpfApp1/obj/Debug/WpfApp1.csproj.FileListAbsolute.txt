@@ -26,3 +26,17 @@ C:\Users\arnau\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\De
 C:\Users\arnau\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
 C:\Users\arnau\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\arnau\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\Arnaud\Desktop\Projet c#\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe.config
+C:\Users\Arnaud\Desktop\Projet c#\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe
+C:\Users\Arnaud\Desktop\Projet c#\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\WpfApp1.pdb
+C:\Users\Arnaud\Desktop\Projet c#\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csprojAssemblyReference.cache
+C:\Users\Arnaud\Desktop\Projet c#\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\MainWindow.g.cs
+C:\Users\Arnaud\Desktop\Projet c#\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\App.g.cs
+C:\Users\Arnaud\Desktop\Projet c#\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+C:\Users\Arnaud\Desktop\Projet c#\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+C:\Users\Arnaud\Desktop\Projet c#\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\MainWindow.baml
+C:\Users\Arnaud\Desktop\Projet c#\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1.g.resources
+C:\Users\Arnaud\Desktop\Projet c#\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+C:\Users\Arnaud\Desktop\Projet c#\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
+C:\Users\Arnaud\Desktop\Projet c#\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
+C:\Users\Arnaud\Desktop\Projet c#\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
