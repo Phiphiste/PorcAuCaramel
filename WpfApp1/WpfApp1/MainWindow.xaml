@@ -9,6 +9,9 @@
     <StackPanel>
         <ComboBox  x:Name="CountriesComboBox" ItemsSource="{Binding Countries}" DisplayMemberPath="name"  Width="150" Margin="161,50,161,0" />
         <Button x:Name="MonPremierBouton" Click="Rechercher" Margin="161,50,161,0" Content="Rechercher"/>
-        <TextBlock x:Name="Capital" Text="{Binding CurrentCapital}"></TextBlock>
+        
+        <Border BorderBrush="{x:Null}" Height="50">
+            <TextBlock x:Name="Capital" Text="{Binding CurrentCapital}" TextWrapping="Wrap"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
     </StackPanel>
 </Window>
