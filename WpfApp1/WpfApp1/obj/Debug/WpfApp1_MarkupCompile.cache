@@ -4,25 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
 C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\
-=======
-C:\Users\Arnaud\Desktop\Projet c#\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\
->>>>>>> 5590b5e9a9b1d13e148fff42b0a628d22106a062
 WpfApp1
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
 C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\App.xaml
-=======
-C:\Users\Arnaud\Desktop\Projet c#\PorcAuCaramel\WpfApp1\WpfApp1\App.xaml
->>>>>>> 5590b5e9a9b1d13e148fff42b0a628d22106a062
 11151548125
 
-81092252753
-13-1505183044
+7-1055039575
+31-81030023
 MainWindow.xaml;
 
-True
+False
 

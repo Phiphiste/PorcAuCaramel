@@ -30,7 +30,6 @@ namespace WpfApp1
         {
             Country selected = (Country) CountriesComboBox.SelectedItem;
             VM v = (VM) this.DataContext;
-            v.CurrentCapital = selected.capital;
         }
     }
 }
