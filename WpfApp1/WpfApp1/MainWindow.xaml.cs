@@ -28,8 +28,9 @@ namespace WpfApp1
 
         private void Rechercher(object sender, RoutedEventArgs e)
         {
-            Country selected = (Country) CountriesComboBox.SelectedItem;
+            Player selected = (Player) Players.SelectedItem;
             VM v = (VM) this.DataContext;
+            v.Selected_player = selected;
         }
     }
 }

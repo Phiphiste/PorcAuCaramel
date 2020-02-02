@@ -7,11 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
-        <ComboBox  x:Name="CountriesComboBox" ItemsSource="{Binding Countries}" DisplayMemberPath="name"  Width="150" Margin="161,50,161,0" />
+        <ComboBox  x:Name="Players" ItemsSource="{Binding Players}" DisplayMemberPath="last_name"  Width="150" Margin="161,50,161,0" />
         <Button x:Name="MonPremierBouton" Click="Rechercher" Margin="161,50,161,0" Content="Rechercher"/>
         
         <Border BorderBrush="{x:Null}" Height="50">
-            <TextBlock x:Name="Capital" Text="{Binding CurrentCapital}" TextWrapping="Wrap"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="Selected_player_first_name" Text="{Binding Selected_player.first_name}"  TextWrapping="Wrap"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+        <Border BorderBrush="{x:Null}" Height="50">
+            <TextBlock x:Name="Selected_player_last_name" Text="{Binding Selected_player.last_name}"  TextWrapping="Wrap"  HorizontalAlignment="Center" VerticalAlignment="Center" />
         </Border>
     </StackPanel>
 </Window>

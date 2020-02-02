@@ -4,38 +4,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.Net;
 
 namespace WpfApp1
 {
     class Model
     {
-        public Dictionary<String, String> Countries = new Dictionary<string, string>();
+        public List<Player> Players = new List<Player>();
 
-        public void ReadCsv(String filename)
+        public void GetPlayers(string url)
         {
+            WebClient client = new WebClient();
 
-            using (var reader = new StreamReader(filename))
+            client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; ");
+
+            Stream data = client.OpenRead(url);
+            StreamReader reader = new StreamReader(data);
+
+            string result = reader.ReadToEnd();
+
+            dynamic jsonObj = JsonConvert.DeserializeObject(result);
+
+            foreach (var obj in jsonObj)
             {
-
-                while (!reader.EndOfStream)
+                foreach (var player in obj.Root.results.bindings)
                 {
-                    var line = reader.ReadLine();
-                    String[] values = line.Split(',');
-
-                    Countries.Add(values[0], values[1]);
+                    string full_name = (string)player.itemLabel.value;
+                    Players.Add(new Player(full_name));
                 }
-
             }
+            data.Close();
+
+            reader.Close();
         }
 
-        public Model(String filename)
+        public Model(String url)
         {
-            ReadCsv(filename);
-        }
-
-        public String getCap(String Country)
-        {
-            return Countries[Country];
+            GetPlayers(url);
         }
     }
 }
