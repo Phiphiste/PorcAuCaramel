@@ -1,0 +1,17 @@
+[
+    {
+        "role" : "point guard" 
+    },
+    {
+        "role" : "shooting guard" 
+    },
+    {
+        "role" : "small forward"
+    },
+    {
+        "role" : "power forward"
+    },
+    {
+        "role" : "center"
+    }
+]
