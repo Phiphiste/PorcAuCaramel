@@ -28,9 +28,31 @@ namespace WpfApp1
 
         private void Rechercher(object sender, RoutedEventArgs e)
         {
+            //Player clicked on becomes the selected player
             Player selected = (Player) Players.SelectedItem;
             VM v = (VM) this.DataContext;
             v.Selected_player = selected;
+
+            //erase the static text elements before appending them once again
+            height.Text = String.Empty;
+            weight.Text = String.Empty;
+            work_timespan.Text = String.Empty;
+            teams.Children.Clear();
+
+            //Appending static text for a better data understanding
+            height.Inlines.Add(selected.height + " cm");
+            weight.Inlines.Add(selected.weight + " Kg");
+            work_timespan.Inlines.Add("Played from " + selected.work_period_start + " to " + selected.work_period_end);
+
+            foreach (Team t in selected.teams)
+            {
+                TextBlock txt = new TextBlock();
+                txt.Text = t.teamName;
+                txt.HorizontalAlignment = HorizontalAlignment.Right;
+                txt.VerticalAlignment = VerticalAlignment.Center;
+                txt.TextWrapping = TextWrapping.Wrap;
+                teams.Children.Add(txt);
+            }
         }
     }
 }

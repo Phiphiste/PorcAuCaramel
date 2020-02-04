@@ -5,16 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="800">
     <StackPanel>
         <ComboBox  x:Name="Players" ItemsSource="{Binding Players}" DisplayMemberPath="full_name"  Width="150" Margin="161,50,161,0" />
         <Button x:Name="MonPremierBouton" Click="Rechercher" Margin="161,50,161,0" Content="Rechercher"/>
-
-        <Border BorderBrush="{x:Null}" Height="50">
-            <TextBlock x:Name="Selected_player" Text="{Binding Selected_player.full_name}"  TextWrapping="Wrap"  HorizontalAlignment="Center" VerticalAlignment="Center" />
-        </Border>
-        <Border BorderBrush="{x:Null}" Height="50">
-            <TextBlock x:Name="position" Text="{Binding Selected_player.position}"  TextWrapping="Wrap"  HorizontalAlignment="Center" VerticalAlignment="Center" />
-        </Border>
+        <StackPanel x:Name="Selected_player" Height="250" Margin="200,50,200,0">
+            <TextBlock x:Name="full_name" Text="{Binding Selected_player.full_name}" Margin="0,0,0,20"  TextWrapping="Wrap"  HorizontalAlignment="Center"/>
+            <TextBlock x:Name="birthdate" Text="{Binding Selected_player.birthdate}"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="nationality" Text="{Binding Selected_player.nationality}" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="height"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="weight"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="position" Text="{Binding Selected_player.position}"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="work_timespan" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <StackPanel x:Name="teams" HorizontalAlignment="Right" VerticalAlignment="Stretch"/>
+        </StackPanel>
     </StackPanel>
 </Window>

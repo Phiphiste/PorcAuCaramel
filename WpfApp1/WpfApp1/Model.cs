@@ -14,17 +14,18 @@ namespace WpfApp1
         public List<Player> Players = new List<Player>();
         public List<Team> NBATeams = new List<Team>();
 
+        //Get the players from a wikidata query and store it in the List<Players> attribute
+        //param : url of the query
         public void GetPlayers(string url)
         {
             WebClient client = new WebClient();
-
             client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; ");
-
             Stream data = client.OpenRead(url);
             StreamReader reader = new StreamReader(data);
 
+            //getting the json result back in a string 
             string result = reader.ReadToEnd();
-
+            //converting it to a json object that we can go through
             dynamic jsonObj = JsonConvert.DeserializeObject(result);
 
             foreach (var obj in jsonObj)
@@ -32,31 +33,42 @@ namespace WpfApp1
                 foreach (var player in obj.Root.results.bindings)
                 {
                     string full_name = (string)player.itemLabel.value;
+                    //creation of our Player object from the full_name
                     Player p = new Player(full_name);
 
-                    p.height = (int)player.hauteur.value;
-                    p.weight = (int)player.masse.value;
+                    p.height = (float)player.hauteur.value;
+                    p.weight = (float)player.masse.value;
                     p.position = (string)player.position_de_jeu_sp_cialit_Label.value;
                     p.nationality = (string)player.pays_de_nationalit_Label.value;
-                    p.birthdate = (string)player.date_de_naissance.value;
 
+                    //Deletion of the time from the birthdate (which was always 00:00:00)
+                    string birthdate = (string)player.date_de_naissance.value;
+                    string[] strlist = birthdate.Split(' ');
+                    p.birthdate = strlist[0];
+
+                    //this field is often null so a check is needed
+                    //if it's empty, we assign a blank value
                     if (player.d_but_de_la_p_riode_d_activit_ != null)
                     {
                         string work_period_start = (string)player.d_but_de_la_p_riode_d_activit_.value;
-                        work_period_start.Substring(work_period_start.Length - 4);
+                        strlist = work_period_start.Split(' ');
+                        work_period_start = strlist[0].Substring(strlist[0].Length - 4);
                         p.work_period_start = work_period_start;
                     }
                     else p.work_period_start = " ";
 
+                    //this field is often null so a check is needed
+                    //if it's empty we assign a blank value too
                     if (player.fin_de_la_p_riode_d_activit_ != null)
                     {
                         string work_period_end = (string)player.fin_de_la_p_riode_d_activit_.value;
-                        work_period_end.Substring(work_period_end.Length - 4);
+                        strlist = work_period_end.Split(' ');
+                        work_period_end = strlist[0].Substring(strlist[0].Length - 4);
                         p.work_period_end = work_period_end;
                     }
                     else p.work_period_end = " ";
                     
-
+                    //check if the player was a part of an actual nba team, if not he is discarded
                     if (player.membre_de_l__quipe_de_sportLabel != null)
                     {
                         Team t = findTeamInNBATeams((string)player.membre_de_l__quipe_de_sportLabel.value);
@@ -72,7 +84,9 @@ namespace WpfApp1
 
             reader.Close();
         }
-
+        
+        //Finds the Team object in the static collection of Teams
+        //param : the team's full name (ex : San Antonio Spurs)
         public Team findTeamInNBATeams(string team_name)
         {
             foreach(Team t in NBATeams)
@@ -83,12 +97,15 @@ namespace WpfApp1
             return null;
         }
 
+        //Read and import all the NBA Teams from a static JSON file saved within the solution
         public void GetTeams()
         {
             string json = System.IO.File.ReadAllText("../../teams.json");
             NBATeams = JsonConvert.DeserializeObject<List<Team>>(json);
         }
 
+        //Constructor of the model, initiates the teams and fetchs the players corresponding to the given query
+        //param: query url
         public Model(String url)
         {
             GetTeams();
