@@ -7,17 +7,112 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
     <StackPanel>
-        <ComboBox  x:Name="Players" ItemsSource="{Binding Players}" DisplayMemberPath="full_name"  Width="150" Margin="161,50,161,0" />
-        <Button x:Name="MonPremierBouton" Click="Rechercher" Margin="161,50,161,0" Content="Rechercher"/>
-        <StackPanel x:Name="Selected_player" Height="250" Margin="200,50,200,0">
-            <TextBlock x:Name="full_name" Text="{Binding Selected_player.full_name}" Margin="0,0,0,20"  TextWrapping="Wrap"  HorizontalAlignment="Center"/>
-            <TextBlock x:Name="birthdate" Text="{Binding Selected_player.birthdate}"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="nationality" Text="{Binding Selected_player.nationality}" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="height"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="weight"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="position" Text="{Binding Selected_player.position}"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="work_timespan" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <StackPanel x:Name="teams" HorizontalAlignment="Right" VerticalAlignment="Stretch"/>
+    <StackPanel Width="Auto" Height="150" Orientation="Horizontal" VerticalAlignment="Top">
+        <StackPanel Width="154" Margin="0">
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                <Label Content="Full Name"          
+           Margin="0,0,0.2,0" 
+           Padding="5,5,5,1" />
+                <TextBox  x:Name="FullNameTextBox"
+                Margin="8,0,10.2,5"
+                Padding="5,1,5,5" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                <Label Content="Nationality" 
+           Margin="0" 
+           Padding="5,5,5,1" />
+                <ComboBox  x:Name="NationalityComboBox"
+                Margin="8,0,10,5"
+                Padding="5,1,5,5" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                <Label Content="Year of birth" 
+           Target="BirthdateTextBox" 
+           Margin="0" 
+           Padding="5,5,5,1" />
+                <TextBox  x:Name="BirthdateTextBox"
+                Margin="10,0,10.2,5"
+                Padding="5,1,5,5" />
+            </StackPanel>
         </StackPanel>
-    </StackPanel>
+        <StackPanel Margin="0" Width="150">
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                <Label Content="Team" 
+           Target="TeamComboBox" 
+           Margin="0" 
+           Padding="5,5,5,1" />
+                <ComboBox  x:Name="TeamComboBox"
+                Margin="10,0,10.2,5"
+                Padding="5,1,5,5" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                <Label Content="Position" 
+           Target="PositionComboBox" 
+           Margin="0" 
+           Padding="5,5,5,1" />
+                <ComboBox  x:Name="PositionComboBox"
+                Margin="10,0,10.2,5"
+                Padding="5,1,5,5" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                <Label Content="Active Player" 
+           Target="ActivePlayerCheckBox" 
+           Margin="0" 
+           Padding="5,5,5,1" />
+                <CheckBox  x:Name="ActivePlayerCheckBox"
+                Margin="25,5,10.2,5"
+                Padding="5,1,5,5" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Margin="0" Width="147">
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                <Label Content="Height"          
+           Margin="0,0,0.2,0" 
+           Padding="5,5,5,1" />
+                <TextBox  x:Name="HeightTextBox"
+                Margin="8,0,10.2,5"
+                Padding="5,1,5,5" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                <Label Content="Weight"          
+           Margin="0,0,0.2,0" 
+           Padding="5,5,5,1" />
+                <TextBox  x:Name="WeightTextBox"
+                Margin="8,0,10.2,5"
+                Padding="5,1,5,5" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Margin="0" Width="182">
+            <Button x:Name="SearchButton" Content="Search"/>
+        </StackPanel>
+        </StackPanel>
+        <StackPanel Margin="0,50,0,0">
+            <ListBox>
+                <ListBoxItem >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Kobe Bryant"/>
+                        <Button Content="Details" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Michael Jordan"/>
+                        <Button Content="Details" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Tony Parker"/>
+                        <Button Content="Details" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Boris Diaw"/>
+                        <Button Content="Details" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </ListBoxItem>
+            </ListBox>
+        </StackPanel>
+        </StackPanel>
 </Window>

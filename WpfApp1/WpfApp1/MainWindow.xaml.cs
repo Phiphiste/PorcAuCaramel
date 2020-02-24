@@ -26,7 +26,7 @@ namespace WpfApp1
             this.DataContext = new VM();
         }
 
-        private void Rechercher(object sender, RoutedEventArgs e)
+        /*private void Rechercher(object sender, RoutedEventArgs e)
         {
             //Player clicked on becomes the selected player
             Player selected = (Player) Players.SelectedItem;
@@ -56,7 +56,7 @@ namespace WpfApp1
                 txt.TextWrapping = TextWrapping.Wrap;
                 teams.Children.Add(txt);
             }
-        }
+        }*/
     }
 }
 
