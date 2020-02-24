@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" Height="449.662" Width="839.278">
     <StackPanel>
         <ComboBox  x:Name="Players" ItemsSource="{Binding Players}" DisplayMemberPath="full_name"  Width="150" Margin="161,50,161,0" />
         <Button x:Name="MonPremierBouton" Click="Rechercher" Margin="161,50,161,0" Content="Rechercher"/>
@@ -17,7 +17,7 @@
             <TextBlock x:Name="weight"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <TextBlock x:Name="position" Text="{Binding Selected_player.position}"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <TextBlock x:Name="work_timespan" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <StackPanel x:Name="teams" HorizontalAlignment="Right" VerticalAlignment="Stretch"/>
+            <StackPanel x:Name="teams" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
         </StackPanel>
     </StackPanel>
 </Window>

@@ -89,7 +89,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CardWindow.xaml.cs">
+      <DependentUpon>CardWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VM.cs" />
+    <Page Include="CardWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
