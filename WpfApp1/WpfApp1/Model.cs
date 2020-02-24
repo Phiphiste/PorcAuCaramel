@@ -32,6 +32,10 @@ namespace WpfApp1
             {
                 foreach (var player in obj.Root.results.bindings)
                 {
+                    if(player.hauteur == null || player.masse == null || player.position_de_jeu_sp_cialit_Label == null || player.pays_de_nationalit_Label == null)
+                    {
+                        continue;
+                    }
                     string full_name = (string)player.itemLabel.value;
                     //creation of our Player object from the full_name
                     Player p = new Player(full_name);
@@ -110,6 +114,39 @@ namespace WpfApp1
         {
             GetTeams();
             GetPlayers(url);
+        }
+    }
+
+    public class Player
+    {
+
+        public string full_name { get; set; }
+        public string birthdate { get; set; }
+        public float height { get; set; }
+        public float weight { get; set; }
+        public string position { get; set; }
+        public string nationality { get; set; }
+        public string work_period_start { get; set; }
+        public string work_period_end { get; set; }
+        public List<Team> teams { get; set; }
+
+        public Player(string full_name)
+        {
+            teams = new List<Team>();
+            this.full_name = full_name;
+        }
+    }
+
+    public class Team
+    {
+        public string abbreviation { get; set; }
+        public string teamName { get; set; }
+        public string simpleName { get; set; }
+        public string location { get; set; }
+
+        public Team(string name)
+        {
+            this.teamName = name;
         }
     }
 }

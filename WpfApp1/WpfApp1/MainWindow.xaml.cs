@@ -39,10 +39,13 @@ namespace WpfApp1
             work_timespan.Text = String.Empty;
             teams.Children.Clear();
 
-            //Appending static text for a better data understanding
+            //Appending static text for a better data vizualisation
             height.Inlines.Add(selected.height + " cm");
             weight.Inlines.Add(selected.weight + " Kg");
-            work_timespan.Inlines.Add("Played from " + selected.work_period_start + " to " + selected.work_period_end);
+            if(selected.work_period_end == " ")
+            {
+                work_timespan.Inlines.Add("Played from " + selected.work_period_start);
+            }else work_timespan.Inlines.Add("Played from " + selected.work_period_start + " to " + selected.work_period_end);
 
             foreach (Team t in selected.teams)
             {
