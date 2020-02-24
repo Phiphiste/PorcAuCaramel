@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="CardWindow" Height="500" Width="500">
-    <StackPanel>
+        Title="CardWindow" Height="528.442" Width="500">
+    <StackPanel x:Name="card_panel" Height="500" Width="500" >
         <!-- Séparé en deux:
                 partie du haut séparé en deux (image + info. perso.)
                 partie du bas: teams et awards
                 -->
-        <StackPanel>
+        <StackPanel x:Name="image_player" Height="250" Width="250" Margin="0,0,260,0">
             <!-- Image du joueur (en haut à gauche) 
                 -->
         </StackPanel>
-
-        <StackPanel>
+        
+        <StackPanel x:Name="pers_infos" Height="250" Width="250" Margin="260,-250,0,0" >
             <!-- Informations personnelles (en haut à droite):
                     - full_name
                     - position
@@ -25,21 +25,25 @@
                     - weight
                     - work_timespan
                     -->
+            <TextBlock x:Name="full_name" Text="Philippe Rambaud" Margin="0,0,0,20"  TextWrapping="Wrap"  HorizontalAlignment="Center"/>
+            <TextBlock x:Name="birthdate" Text="24/07/1998"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="nationality" Text="French" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="height"  Text="1'80" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="weight"  Text="70kg" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="position" Text="Point Guard"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="work_timespan" Text="From 2010 to 2018" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
         </StackPanel>
-        
-        <StackPanel>
+
+
+
+        <StackPanel x:Name="comp_infos" Height="250" Width="500">
             <!-- Informations complémentaires (en bas):
                     - teams (list)
                     - awards (list)
                 -->
-        </StackPanel>
-        <TextBlock x:Name="full_name" Text="{Binding Selected_player.full_name}" Margin="0,0,0,20"  TextWrapping="Wrap"  HorizontalAlignment="Center"/>
-            <TextBlock x:Name="birthdate" Text="{Binding Selected_player.birthdate}"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="nationality" Text="{Binding Selected_player.nationality}" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="height"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="weight"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="position" Text="{Binding Selected_player.position}"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="work_timespan" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <StackPanel x:Name="teams" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+        </StackPanel>
+
+
     </StackPanel>
 </Window>
