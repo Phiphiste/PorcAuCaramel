@@ -32,6 +32,9 @@ namespace WpfApp1
         //All players corresponding to research
         public List<Player> fullQueryResult = new List<Player>();
 
+        //Dictionary of filters
+        public Dictionary<string, string> filters = new Dictionary<string, string>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -69,9 +72,10 @@ namespace WpfApp1
 
         private void SearchResults(object sender, RoutedEventArgs e)
         {
+            BuildFiltersDict();
+
             VM v = (VM)this.DataContext;
-            //allPlayers = v.getResearchResult();
-            fullQueryResult = v.players.ToList();
+            fullQueryResult = v.getResearchResult(filters);
             numberOfPages = (fullQueryResult.Count() / resultsByPage) + 1;
 
             ResultsPanel.Visibility = Visibility.Visible;
@@ -99,37 +103,40 @@ namespace WpfApp1
             }
         }
 
-        /*private void Rechercher(object sender, RoutedEventArgs e)
+        public void BuildFiltersDict()
         {
-            //Player clicked on becomes the selected player
-            Player selected = (Player) Players.SelectedItem;
-            VM v = (VM) this.DataContext;
-            v.Selected_player = selected;
+            //Full Name
+            if(FullNameTextBox.Text != String.Empty)
+                filters.Add("FullName", FullNameTextBox.Text);
 
-            //erase the static text elements before appending them once again
-            height.Text = String.Empty;
-            weight.Text = String.Empty;
-            work_timespan.Text = String.Empty;
-            teams.Children.Clear();
+            //Nationality
+            if(NationalityComboBox.SelectedItem != null)
+                filters.Add("Nationality", NationalityComboBox.SelectedItem.ToString());
 
-            //Appending static text for a better data vizualisation
-            height.Inlines.Add(selected.height + " cm");
-            weight.Inlines.Add(selected.weight + " Kg");
-            if(selected.work_period_end == " ")
-            {
-                work_timespan.Inlines.Add("Played from " + selected.work_period_start);
-            }else work_timespan.Inlines.Add("Played from " + selected.work_period_start + " to " + selected.work_period_end);
+            //Year of birth
+            if (BirthdateTextBox.Text != String.Empty)
+                filters.Add("BirthYear", BirthdateTextBox.Text);
 
-            foreach (Team t in selected.teams)
-            {
-                TextBlock txt = new TextBlock();
-                txt.Text = t.teamName;
-                txt.HorizontalAlignment = HorizontalAlignment.Right;
-                txt.VerticalAlignment = VerticalAlignment.Center;
-                txt.TextWrapping = TextWrapping.Wrap;
-                teams.Children.Add(txt);
-            }
-        }*/
+            //Team
+            if (TeamComboBox.SelectedItem != null)
+                filters.Add("Team", TeamComboBox.Text);
+
+            //Position
+            if (PositionComboBox.SelectedItem != null)
+                filters.Add("Position", PositionComboBox.Text);
+
+            //Active Player
+            if (ActivePlayerCheckBox.IsChecked == true)
+                filters.Add("isActive", "True");
+
+            //Height
+            if (HeightTextBox.Text != String.Empty)
+                filters.Add("Height", HeightTextBox.Text);
+
+            //Weight
+            if (WeightTextBox.Text != String.Empty)
+                filters.Add("Weight", WeightTextBox.Text);
+        }
     }
 }
 

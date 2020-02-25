@@ -40,7 +40,7 @@
             <StackPanel Orientation="Vertical">
                 <Label Content="Position" Padding="5,5,5,1" />
                     <ComboBox  x:Name="PositionComboBox" Margin="10,0,10.2,5" Padding="5,1,5,5">
-                        <ComboBoxItem>Point Guard</ComboBoxItem>
+                        <ComboBoxItem Content="Point Guard"/>
                         <ComboBoxItem>Shooting Guard</ComboBoxItem>
                         <ComboBoxItem>Small Forward</ComboBoxItem>
                         <ComboBoxItem>Power Forward</ComboBoxItem>
@@ -51,7 +51,7 @@
                 <Label Content="Active Player" Padding="5,5,5,1" />
                 <CheckBox  x:Name="ActivePlayerCheckBox"
                 Margin="25,5,10.2,5"
-                Padding="5,1,5,5" />
+                Padding="5,1,5,5"/>
             </StackPanel>
         </StackPanel>
             <StackPanel Width="147">

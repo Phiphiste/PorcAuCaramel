@@ -69,6 +69,12 @@ namespace WpfApp1
             }
         }
 
+        public List<Player> getResearchResult(Dictionary<string,string> filters)
+        {
+            List<Player> results = null;
+            return results;
+        }
+
         //Returns a Team object from a Team List
         //params: the list to get the object from, the name of the team we want
         public Team getTeamFromTeams(List<Team> teams, string team_name)
