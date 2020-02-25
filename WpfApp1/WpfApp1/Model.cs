@@ -11,6 +11,7 @@ namespace WpfApp1
 {
     class Model
     {
+        public List<string> Countries = new List<string>();
         public List<Player> Players = new List<Player>();
         public List<Team> NBATeams = new List<Team>();
 
@@ -108,12 +109,28 @@ namespace WpfApp1
             NBATeams = JsonConvert.DeserializeObject<List<Team>>(json);
         }
 
+        public void GetCountries()
+        {
+            using (var reader = new StreamReader("../../country-capitals.csv"))
+            {
+
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    String[] values = line.Split(',');
+                    Countries.Add(values[0]);
+                }
+
+            }
+        }
+
         //Constructor of the model, initiates the teams and fetchs the players corresponding to the given query
         //param: query url
         public Model(String url)
         {
             GetTeams();
             GetPlayers(url);
+            GetCountries();
         }
     }
 

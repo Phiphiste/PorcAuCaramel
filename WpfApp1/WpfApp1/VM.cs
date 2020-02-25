@@ -21,6 +21,8 @@ namespace WpfApp1
     class VM : INotifyPropertyChanged
     {
         public ObservableCollection<Player> players = new ObservableCollection<Player>();
+        public ObservableCollection<string> countries = new ObservableCollection<string>();
+        public ObservableCollection<Team> teams = new ObservableCollection<Team>();
         public Player selected_player { get; set; }
         public Model model;
 
@@ -54,6 +56,16 @@ namespace WpfApp1
                         //we add it to the Player object we already have
                         existing_player.teams.Add(p.teams.First());
                 }
+            }
+
+            foreach(string country in model.Countries)
+            {
+                countries.Add(country);
+            }
+
+            foreach(Team team in model.NBATeams)
+            {
+                teams.Add(team);
             }
         }
 
@@ -102,6 +114,30 @@ namespace WpfApp1
             {
                 this.players = value;
                 OnPropertyChanged("Players");
+            }
+        }
+
+        //Binding with the interface for the countries
+        public ObservableCollection<string> Countries
+        {
+            get { return this.countries; }
+
+            set
+            {
+                this.countries = value;
+                OnPropertyChanged("Countries");
+            }
+        }
+
+        //Binding with the interface for the teams
+        public ObservableCollection<Team> Teams
+        {
+            get { return this.teams; }
+
+            set
+            {
+                this.teams = value;
+                OnPropertyChanged("Teams");
             }
         }
     }
