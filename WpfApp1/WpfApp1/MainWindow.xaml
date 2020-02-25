@@ -66,32 +66,22 @@
                     <TextBox  x:Name="WeightTextBox"
                 Margin="8,0,10.2,5"
                 Padding="5,1,5,5" />
-                    <Button x:Name="SearchButton" Content="Search" Height="50"/>
+                    <Button x:Name="SearchButton" Content="Search" Height="50" Click="SearchResults"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
         <StackPanel Margin="0,50,0,0">
-            <ListBox>
+            <ListBox x:Name="ResultsListBox">
                 <ListBoxItem BorderBrush="AliceBlue"  BorderThickness="1" Margin="0,0,0,5">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Kobe Bryant"/>
                     </StackPanel>
                 </ListBoxItem>
-                <ListBoxItem BorderBrush="AliceBlue"  BorderThickness="1" Margin="0,0,0,5">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Michael Jordan"/>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem BorderBrush="AliceBlue"  BorderThickness="1" Margin="0,0,0,5">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Tony Parker"/>
-                    </StackPanel>
-                </ListBoxItem>
             </ListBox>
             <Button Content="See card" Margin="10"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="Previous" Margin="10" IsEnabled="False"/>
-                <Button Content="Next" Margin="10"/>
+                <Button Content="Previous" Margin="10" Click="PreviousPage"/>
+                <Button Content="Next" Margin="10" Click="NextPage"/>
             </StackPanel>
         </StackPanel>
         </StackPanel>
