@@ -41,8 +41,17 @@
                     - teams (list)
                     - awards (list)
                 -->
-                <StackPanel x:Name="teams" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+                <ListBox Name="Teams" Height="70" Background="GhostWhite" BorderThickness="0" SelectionChanged="PrintText" SelectionMode="Single" Margin="33,0,62,0">
+                    <ListBoxItem FontSize="14" FontWeight="Bold">Teams</ListBoxItem>
+                    <ListBoxItem>Item 2</ListBoxItem>
+                </ListBox>
+                <ListBox Name="Awards" Height="70" Background="GhostWhite" BorderThickness="0" SelectionChanged="PrintText" SelectionMode="Single" Margin="33,0,62,0">
+                    <ListBoxItem FontSize="14" FontWeight="Bold">Awards</ListBoxItem>
+                    <ListBoxItem>Item 2</ListBoxItem>
+                    <ListBoxItem>Item 3</ListBoxItem>
+                </ListBox>
             </StackPanel>
         </StackPanel>
     </Border>
 </Window>
+
