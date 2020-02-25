@@ -71,7 +71,96 @@ namespace WpfApp1
 
         public List<Player> getResearchResult(Dictionary<string,string> filters)
         {
-            List<Player> results = null;
+            //initially the results are all the players
+            List<Player> results = players.ToList();
+
+            //loop through the DB to remove those who don't dit the filters
+            foreach(Player p in players)
+            {
+                //Full Name
+                if (filters.ContainsKey("FullName"))
+                {
+                    //if the name doesn't contain what we're looking for, remove the player and go to the net one
+                    if (!p.full_name.ToLower().Contains(filters["FullName"].ToLower()))
+                    {
+                        results.Remove(p);
+                        continue;
+                    }
+                }
+
+                //Nationality
+                if (filters.ContainsKey("Nationality"))
+                {
+                    if (!p.nationality.ToLower().Contains(filters["Nationality"].ToLower()))
+                    {
+                        results.Remove(p);
+                        continue;
+                    }
+                }
+
+                //Year of birth
+                if (filters.ContainsKey("BirthYear"))
+                {
+                    if (!p.birthdate.Contains(filters["BirthYear"]))
+                    {
+                        results.Remove(p);
+                        continue;
+                    }
+                }
+
+                //Team
+                if (filters.ContainsKey("Team"))
+                {
+                    foreach(Team t in p.teams)
+                    {
+                        if(!t.teamName.Contains(filters["Team"]))
+                        {
+                            results.Remove(p);
+                            continue;
+                        }
+                    }                  
+                }
+
+                //Position
+                if (filters.ContainsKey("Position"))
+                {
+                    if (!p.position.ToLower().Contains(filters["Position"].ToLower()))
+                    {
+                        results.Remove(p);
+                        continue;
+                    }
+                }
+
+                //Active Player
+                if (filters.ContainsKey("isActive"))
+                {
+                    if(p.work_period_end != " ")
+                    {
+                        results.Remove(p);
+                        continue;
+                    }
+                }
+
+                //Height
+                if (filters.ContainsKey("Height"))
+                {
+                    if (!p.height.ToString().Contains(filters["Height"]))
+                    {
+                        results.Remove(p);
+                        continue;
+                    }
+                }
+
+                //Weight
+                if (filters.ContainsKey("Weight"))
+                {
+                    if (!p.weight.ToString().Contains(filters["Weight"]))
+                    {
+                        results.Remove(p);
+                        continue;
+                    }
+                }
+            }
             return results;
         }
 

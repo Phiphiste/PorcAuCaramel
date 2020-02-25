@@ -75,9 +75,16 @@ namespace WpfApp1
             BuildFiltersDict();
 
             VM v = (VM)this.DataContext;
+
             fullQueryResult = v.getResearchResult(filters);
+
+            //compute the number of pages based on the result by page
             numberOfPages = (fullQueryResult.Count() / resultsByPage) + 1;
 
+            //reset current page
+            currentPageNumber = 0;            
+
+            //Make the results appear
             ResultsPanel.Visibility = Visibility.Visible;
 
             DisplayCurrentPage();
@@ -93,18 +100,16 @@ namespace WpfApp1
 
         private void PreviousPage(object sender, RoutedEventArgs e)
         {
-            //if we are at the base page we can't go previous
-            if (currentPageNumber > 0)
-            {
-                //set current page
-                currentPageNumber--;
+            //Set current page
+            currentPageNumber--;
 
-                DisplayCurrentPage();
-            }
+            DisplayCurrentPage();
         }
 
         public void BuildFiltersDict()
         {
+            filters.Clear();
+
             //Full Name
             if(FullNameTextBox.Text != String.Empty)
                 filters.Add("FullName", FullNameTextBox.Text);
