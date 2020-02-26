@@ -8,7 +8,7 @@
         Title="MainWindow" Height="600" Width="800">
     <StackPanel>
     <StackPanel Width="Auto" Height="170" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-        <StackPanel Width="154">
+        <StackPanel Width="150">
             <StackPanel Orientation="Vertical" Margin="0,0,0,0">
                 <Label Content="Full Name" Padding="5,5,5,1" />
                 <TextBox  x:Name="FullNameTextBox"
@@ -17,11 +17,9 @@
             </StackPanel>
             <StackPanel Orientation="Vertical">
                 <Label Content="Nationality" Padding="5,5,5,1" />
-                <ComboBox  x:Name="NationalityComboBox"
-                    ItemsSource="{Binding Countries}"
-                    Margin="8,0,10,5"
-                    Padding="5,1,5,5" />
-            </StackPanel>
+                    <ComboBox  x:Name="NationalityComboBox" SelectedValue=" " ItemsSource="{Binding Countries}" Margin="8,0,10,5" Padding="5,1,5,5">
+                    </ComboBox>
+                </StackPanel>
             <StackPanel Orientation="Vertical">
                 <Label Content="Year of birth" Padding="5,5,5,1" />
                 <TextBox  x:Name="BirthdateTextBox"
@@ -40,7 +38,7 @@
             <StackPanel Orientation="Vertical">
                 <Label Content="Position" Padding="5,5,5,1" />
                     <ComboBox  x:Name="PositionComboBox" Margin="10,0,10.2,5" Padding="5,1,5,5">
-                        <ComboBoxItem Content="Point Guard"/>
+                        <ComboBoxItem>Point Guard</ComboBoxItem>
                         <ComboBoxItem>Shooting Guard</ComboBoxItem>
                         <ComboBoxItem>Small Forward</ComboBoxItem>
                         <ComboBoxItem>Power Forward</ComboBoxItem>
@@ -54,20 +52,23 @@
                 Padding="5,1,5,5"/>
             </StackPanel>
         </StackPanel>
-            <StackPanel Width="147">
+            <StackPanel>
                 <StackPanel Orientation="Vertical">
                     <Label Content="Height" Padding="5,5,5,1" />
                     <TextBox  x:Name="HeightTextBox"
                 Margin="8,0,10.2,5"
                 Padding="5,1,5,5" />
                 </StackPanel>
-                <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Vertical" Width="150">
                     <Label Content="Weight" Padding="5,5,5,1" />
                     <TextBox  x:Name="WeightTextBox"
                 Margin="8,0,10.2,5"
                 Padding="5,1,5,5" />
-                    <Button x:Name="SearchButton" Content="Search" Height="50" Click="SearchResults"/>
                 </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Width="150">
+                <Button x:Name="ClearFiltersButton" Content="Clear filters" Height="50" Click="ClearFilters" Margin="10"/>
+                <Button x:Name="SearchButton" Content="Search" Height="50" Click="SearchResults" Margin="10"/>
             </StackPanel>
         </StackPanel>
         <StackPanel x:Name="ResultsPanel" Margin="0,50,0,0" Visibility="Hidden">

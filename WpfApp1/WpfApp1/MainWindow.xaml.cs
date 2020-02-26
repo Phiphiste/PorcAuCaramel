@@ -142,6 +142,23 @@ namespace WpfApp1
             if (WeightTextBox.Text != String.Empty)
                 filters.Add("Weight", WeightTextBox.Text);
         }
+
+        public void ClearFilters(object sender, RoutedEventArgs e)
+        {
+            //clear the textBoxes
+            FullNameTextBox.Clear();
+            BirthdateTextBox.Clear();
+            HeightTextBox.Clear();
+            WeightTextBox.Clear();
+
+            //select empty item for comboBoxes
+            NationalityComboBox.SelectedIndex = -1;
+            TeamComboBox.SelectedIndex = -1;
+            PositionComboBox.SelectedIndex = -1;
+
+            //untick checkBoxes
+            ActivePlayerCheckBox.IsChecked = false;
+        }
     }
 }
 
