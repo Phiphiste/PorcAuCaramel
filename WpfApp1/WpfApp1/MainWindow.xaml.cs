@@ -14,13 +14,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
+
 
 namespace WpfApp1
 {
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public int currentPageNumber = 0;
         public int resultsByPage = 10;
@@ -135,12 +137,18 @@ namespace WpfApp1
                 filters.Add("isActive", "True");
 
             //Height
-            if (HeightTextBox.Text != String.Empty)
-                filters.Add("Height", HeightTextBox.Text);
+            if (HeightSlider.LowerValue != 150 || HeightSlider.UpperValue != 250)
+            {
+                filters.Add("HeightMin", HeightSlider.LowerValue.ToString());
+                filters.Add("HeightMax", HeightSlider.UpperValue.ToString());
+            }
 
             //Weight
-            if (WeightTextBox.Text != String.Empty)
-                filters.Add("Weight", WeightTextBox.Text);
+            if (WeightSlider.LowerValue != 50 || WeightSlider.UpperValue != 250)
+            {
+                filters.Add("WeightMin", WeightSlider.LowerValue.ToString());
+                filters.Add("WeightMax", WeightSlider.UpperValue.ToString());
+            }
         }
 
         public void ClearFilters(object sender, RoutedEventArgs e)
@@ -148,8 +156,12 @@ namespace WpfApp1
             //clear the textBoxes
             FullNameTextBox.Clear();
             BirthdateTextBox.Clear();
-            HeightTextBox.Clear();
-            WeightTextBox.Clear();
+
+            //reset the sliders
+            HeightSlider.LowerValue=150;
+            HeightSlider.UpperValue = 250;
+            WeightSlider.LowerValue = 50;
+            WeightSlider.UpperValue = 250;
 
             //select empty item for comboBoxes
             NationalityComboBox.SelectedIndex = -1;

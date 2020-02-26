@@ -71,3 +71,9 @@ C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\D
 C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\RestSharp.xml
 C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\PlayerCard.g.cs
 C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\PlayerCard.baml
+C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\ControlzEx.dll
+C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\MahApps.Metro.dll
+C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\ControlzEx.pdb
+C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\MahApps.Metro.pdb
+C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\MahApps.Metro.xml
