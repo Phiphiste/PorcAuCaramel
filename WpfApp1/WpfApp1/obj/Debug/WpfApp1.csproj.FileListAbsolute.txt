@@ -69,3 +69,5 @@ C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\D
 C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\NUglify.xml
 C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\Renci.SshNet.xml
 C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\RestSharp.xml
+C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\PlayerCard.g.cs
+C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\PlayerCard.baml

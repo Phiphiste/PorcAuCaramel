@@ -159,6 +159,17 @@ namespace WpfApp1
             //untick checkBoxes
             ActivePlayerCheckBox.IsChecked = false;
         }
+
+        public void SeeCard(object sender, RoutedEventArgs e)
+        {
+            //get the Player object from the ViewModel
+            VM v = (VM)this.DataContext;
+            Player p = v.getPlayerFromPlayers(ResultsListBox.SelectedItem.ToString());
+
+            //Instantiate new PlayerCard window / pass the corresponding player
+            PlayerCard pc = new PlayerCard(p);
+            pc.Show();
+        }
     }
 }
 
