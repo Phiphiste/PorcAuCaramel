@@ -41,21 +41,35 @@ namespace WpfApp1
         {
             InitializeComponent();
             this.DataContext = new VM();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         public void DisplayCurrentPage()
         {
             //clear current list
+            NoResults.Text = "";
             ResultsListBox.Items.Clear();
+            SeeCardBtn.IsEnabled = true;
 
             //Fetch results from ViewModel depending on filters
             playersDisplayed = fullQueryResult.Skip(currentPageNumber * resultsByPage)
                                               .Take(resultsByPage).ToList();
 
+            if(playersDisplayed.Count() == 0)
+            {
+                NoResults.Text = "No results found";
+                SeeCardBtn.IsEnabled = false;
+            }
+
             //Add players to the results listbox
             foreach (Player p in playersDisplayed)
             {
-                ResultsListBox.Items.Add(p.full_name);
+                ListBoxItem item = new ListBoxItem();
+
+                item.Content = p.full_name;
+                item.BorderBrush = Brushes.Black;
+                item.Height = 30;
+                ResultsListBox.Items.Add(item);
             }
 
             //if it's the first page, disable "Previous" button
@@ -149,6 +163,14 @@ namespace WpfApp1
                 filters.Add("WeightMin", WeightSlider.LowerValue.ToString());
                 filters.Add("WeightMax", WeightSlider.UpperValue.ToString());
             }
+
+            //MVP
+            if (MVPCheckBox.IsChecked == true)
+                filters.Add("MVP", "True");
+
+            //AllStar
+            if (AllStarCheckBox.IsChecked == true)
+                filters.Add("AllStar", "True");
         }
 
         public void ClearFilters(object sender, RoutedEventArgs e)
@@ -179,8 +201,12 @@ namespace WpfApp1
             Player p = v.getPlayerFromPlayers(ResultsListBox.SelectedItem.ToString());
 
             //Instantiate new PlayerCard window / pass the corresponding player
-            PlayerCard pc = new PlayerCard(p);
-            pc.Show();
+            if (p != null)
+            {
+                PlayerCard pc = new PlayerCard(p);
+                pc.Show();
+            }
+            
         }
     }
 }

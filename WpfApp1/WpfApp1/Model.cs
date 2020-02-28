@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Net;
+using System.Text.RegularExpressions;
 
 namespace WpfApp1
 {
@@ -14,6 +15,8 @@ namespace WpfApp1
         public List<string> Countries = new List<string>();
         public List<Player> Players = new List<Player>();
         public List<Team> NBATeams = new List<Team>();
+        public Dictionary<string, int> MVPs = new Dictionary<string, int>();
+        public Dictionary<string, int> AllStars = new Dictionary<string, int>();
 
         //Get the players from a wikidata query and store it in the List<Players> attribute
         //param : url of the query
@@ -124,6 +127,40 @@ namespace WpfApp1
             }
         }
 
+        public void GetMVPs()
+        {
+            using (var reader = new StreamReader("../../MVPs.csv"))
+            {
+
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    String[] values = line.Split(';');
+                    MVPs.Add(values[0],Int32.Parse(values[1]));
+                }
+
+            }
+        }
+
+        public void GetAllStars()
+        {
+            using (var reader = new StreamReader("../../AllStars.csv"))
+            {
+
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    String[] values = line.Split(';');
+                    
+                    //RegEx to get rid of strange chars in csv file
+                    //string name = Regex.Replace(values[0], @"[^A-Z]+", String.Empty);
+                    if(!AllStars.ContainsKey(values[0]) && values[0] != "")
+                        AllStars.Add(values[0], Int32.Parse(values[1]));
+                }
+
+            }
+        }
+
         //Constructor of the model, initiates the teams and fetchs the players corresponding to the given query
         //param: query url
         public Model(String url)
@@ -131,6 +168,8 @@ namespace WpfApp1
             GetTeams();
             GetPlayers(url);
             GetCountries();
+            GetMVPs();
+            GetAllStars();
         }
     }
 
@@ -147,9 +186,12 @@ namespace WpfApp1
         public string work_period_end { get; set; }
         public List<Team> teams { get; set; }
 
+        public Dictionary<string,int> awards { get; set; }
+
         public Player(string full_name)
         {
             teams = new List<Team>();
+            awards = new Dictionary<string, int>();
             this.full_name = full_name;
         }
     }
