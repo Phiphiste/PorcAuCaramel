@@ -199,7 +199,7 @@ namespace WpfApp1
             //get the Player object from the ViewModel
             VM v = (VM)this.DataContext;
             Player p = v.getPlayerFromPlayers(ResultsListBox.SelectedItem.ToString());
-
+            string s = ResultsListBox.SelectedItem.ToString();
             //Instantiate new PlayerCard window / pass the corresponding player
             if (p != null)
             {

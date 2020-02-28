@@ -246,7 +246,7 @@ namespace WpfApp1
         {
             foreach(Player p in players)
             {
-                if (p.full_name == full_name)
+                if (full_name.Contains(p.full_name))
                     return p;
             }
             return null;
