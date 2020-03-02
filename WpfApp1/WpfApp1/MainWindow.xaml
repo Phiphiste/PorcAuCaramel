@@ -6,9 +6,10 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
+        Closing="ClosingApp" 
         Title="NBA Browser" Height="700" Width="800">
     <StackPanel>
-    <StackPanel Width="Auto" Height="170" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+    <StackPanel Background="AliceBlue" Width="Auto" Height="170" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
         <StackPanel Width="150">
             <StackPanel Orientation="Vertical" Margin="0,0,0,0">
                 <Label Content="Full Name" Padding="5,5,5,1" />
@@ -80,7 +81,7 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Vertical" Width="150">
-                <Button x:Name="ClearFiltersButton" Content="Clear filters" Height="50" Click="ClearFilters" Margin="10"/>
+                <Button x:Name="ClearFiltersButton" Content="Clear Filters" Height="50" Click="ClearFilters" Margin="10"/>
                 <Button x:Name="SearchButton" Content="Search" Height="50" Click="SearchResults" Margin="10"/>
             </StackPanel>
         </StackPanel>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,11 +37,12 @@ namespace WpfApp1
         //Dictionary of filters
         public Dictionary<string, string> filters = new Dictionary<string, string>();
 
-        public MainWindow()
+        public MainWindow(int querySize)
         {
             InitializeComponent();
-            this.DataContext = new VM();
+            this.DataContext = new VM(querySize);
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            SearchResults(null, null);
         }
 
         public void DisplayCurrentPage()
@@ -207,6 +208,11 @@ namespace WpfApp1
                 pc.Show();
             }
             
+        }
+
+        public void ClosingApp(object sender, CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

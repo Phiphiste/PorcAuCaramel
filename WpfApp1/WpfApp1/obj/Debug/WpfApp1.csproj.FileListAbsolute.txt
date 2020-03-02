@@ -77,3 +77,7 @@ C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\D
 C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\ControlzEx.pdb
 C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\MahApps.Metro.pdb
 C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\MahApps.Metro.xml
+C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\StartWindow.g.cs
+C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\obj\Debug\StartWindow.baml
+C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\LoadingIndicators.WPF.dll
+C:\Users\Arnaud\Desktop\CODE\ING4\C#\Project\PorcAuCaramel\WpfApp1\WpfApp1\bin\Debug\LoadingIndicators.WPF.pdb
