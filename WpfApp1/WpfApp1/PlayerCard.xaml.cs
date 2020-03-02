@@ -27,6 +27,11 @@ namespace WpfApp1
             player = p;
 
             Name.Text = p.full_name;
+            Nationality.Text = p.nationality;
+            Height.Text = p.height.ToString() + "cm";
+            Weight.Text = p.weight.ToString() + "kg";
+            Position.Text = p.position;
+            Work_timespan.Text = p.work_period_start + " - " + p.work_period_end;
         }
     }
 }

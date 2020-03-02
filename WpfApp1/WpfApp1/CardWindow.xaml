@@ -1,0 +1,57 @@
+﻿<Window x:Class="WpfApp1.CardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="CardWindow"
+        Height="400"
+        Width="500">
+  <Border Background="GhostWhite" BorderBrush="Orange" BorderThickness="3" CornerRadius="8,8,8,8">
+    <StackPanel x:Name="CardPanel" Margin="-0.2,-0.2,-3.6,-2.8" >
+      <!-- Séparé en deux:
+                    partie du haut séparé en deux (image + info. perso.)
+                    partie du bas: teams et awards
+                    -->
+      <StackPanel x:Name="ImagePlayer" Height="200" Width="245" Margin="0,0,255,0">
+        <!-- Image du joueur (en haut à gauche) 
+                    -->
+        <Image Name="image_player" Source="image_test" Height="180" Width="180" Margin="10,10,10,10" />
+      </StackPanel>
+      <StackPanel x:Name="PersInfos" Height="180" Width="245" Margin="240,-200,0,0" >
+        <!-- Informations personnelles (en haut à droite):
+                        - full_name
+                        - position
+                        - nationality
+                        - height
+                        - weight
+                        - work_timespan
+                        -->
+        <TextBlock x:Name="full_name" Text="{Binding Selected_player.full_name}" Margin="0,0,0,20"  TextWrapping="Wrap"  HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+        <TextBlock x:Name="birthdate" Text="24/07/1998"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+        <TextBlock x:Name="nationality" Text="French" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+        <TextBlock x:Name="height"  Text="1'80" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+        <TextBlock x:Name="weight"  Text="70kg" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+        <TextBlock x:Name="position" Text="Point Guard"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+        <TextBlock x:Name="work_timespan" Text="From 2010 to 2018" TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+      </StackPanel>
+      <StackPanel x:Name="CompInfos" Height="162" Width="500">
+        <!-- Informations complémentaires (en bas):
+                    - teams (list)
+                    - awards (list)
+                -->
+        <ListBox Name="Teams" Height="70" Background="GhostWhite" BorderThickness="0"  SelectionMode="Single" Margin="33,0,62,0">
+          <ListBoxItem FontSize="14" FontWeight="Bold">Teams</ListBoxItem>
+          <ListBoxItem>Item 2</ListBoxItem>
+        </ListBox>
+        <ListBox Name="Awards" Height="70" Background="GhostWhite" BorderThickness="0" SelectionMode="Single" Margin="33,0,62,0">
+          <ListBoxItem FontSize="14" FontWeight="Bold">Awards</ListBoxItem>
+          <ListBoxItem>Item 2</ListBoxItem>
+          <ListBoxItem>Item 3</ListBoxItem>
+        </ListBox>
+      </StackPanel>
+    </StackPanel>
+  </Border>
+</Window>
+
