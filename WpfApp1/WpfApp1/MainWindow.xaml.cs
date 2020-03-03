@@ -25,7 +25,7 @@ namespace WpfApp1
     public partial class MainWindow
     {
         public int currentPageNumber = 0;
-        public int resultsByPage = 10;
+        public int resultsByPage = 13;
         public int numberOfPages;
 
         //players displayed in current page
@@ -54,7 +54,7 @@ namespace WpfApp1
             //clear current list
             NoResults.Text = "";
             ResultsListBox.Items.Clear();
-            SeeCardBtn.IsEnabled = true;
+            //SeeCardBtn.IsEnabled = true;
 
             //Fetch results from ViewModel depending on filters
             playersDisplayed = fullQueryResult.Skip(currentPageNumber * resultsByPage)
@@ -63,7 +63,7 @@ namespace WpfApp1
             if(playersDisplayed.Count() == 0)
             {
                 NoResults.Text = "No results found";
-                SeeCardBtn.IsEnabled = false;
+                //SeeCardBtn.IsEnabled = false;
             }
 
             //Add players to the results listbox
@@ -177,6 +177,10 @@ namespace WpfApp1
             //AllStar
             if (AllStarCheckBox.IsChecked == true)
                 filters.Add("AllStar", "True");
+
+            //DPOY
+            if (DPOYCheckBox.IsChecked == true)
+                filters.Add("DPOY", "True");
         }
 
         public void ClearFilters(object sender, RoutedEventArgs e)
@@ -200,6 +204,8 @@ namespace WpfApp1
             ActivePlayerCheckBox.IsChecked = false;
             AllStarCheckBox.IsChecked = false;
             MVPCheckBox.IsChecked = false;
+            DPOYCheckBox.IsChecked = false;
+       
         }
 
         public void SeeCard(object sender, RoutedEventArgs e)

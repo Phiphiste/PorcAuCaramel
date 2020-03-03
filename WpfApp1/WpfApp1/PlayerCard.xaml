@@ -38,16 +38,22 @@
                     <TextBlock x:Name="Work_timespan"  TextWrapping="Wrap"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
                 </StackPanel>
 
-                <StackPanel x:Name="CompInfos" Height="162" Width="500" Orientation="Horizontal">
+                <StackPanel x:Name="CompInfos" Height="160" Width="500" Orientation="Horizontal">
+                    
                     <!-- Informations complémentaires (en bas):
                             - teams (list)
                             - awards (list)
                         -->
-                    <Label Content="Teams"/>
-                    <ListBox Name="Teams_" Height="70" Background="GhostWhite" BorderThickness="0"  SelectionMode="Single" Margin="10,0,0,0"/>
-                    <Label Content="Awards" Margin="150,0,0,0"/>
-                    <ListBox Name="Awards_" Height="70" Background="GhostWhite" BorderThickness="0" SelectionMode="Single" Margin="0,0,0,0"/>
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Teams"/>
+                        <ListBox Name="Teams_" Height="100" Width="200" Background="GhostWhite" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="10,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="70,0,0,0">
+                        <Label Content="Awards" />
+                        <ItemsControl Name="Awards_" Width="200" Background="GhostWhite" BorderThickness="0"/>
+                    </StackPanel>
                 </StackPanel>
+
 
             </StackPanel>
         </Border>

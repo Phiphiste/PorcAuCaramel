@@ -17,6 +17,7 @@ namespace WpfApp1
         public List<Team> NBATeams = new List<Team>();
         public Dictionary<string, int> MVPs = new Dictionary<string, int>();
         public Dictionary<string, int> AllStars = new Dictionary<string, int>();
+        public Dictionary<string, int> DPOYs = new Dictionary<string, int>();
 
         //Get the players from a wikidata query and store it in the List<Players> attribute
         //param : url of the query
@@ -158,10 +159,25 @@ namespace WpfApp1
                     var line = reader.ReadLine();
                     String[] values = line.Split(';');
                     
-                    //RegEx to get rid of strange chars in csv file
-                    //string name = Regex.Replace(values[0], @"[^A-Z]+", String.Empty);
                     if(!AllStars.ContainsKey(values[0]) && values[0] != "")
                         AllStars.Add(values[0], Int32.Parse(values[1]));
+                }
+
+            }
+        }
+
+        public void GetDefensivePlayer()
+        {
+            using (var reader = new StreamReader("../../defensivePlayer.csv"))
+            {
+
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    String[] values = line.Split(';');
+
+                    if (!DPOYs.ContainsKey(values[0]) && values[0] != "")
+                        DPOYs.Add(values[0], Int32.Parse(values[1]));
                 }
 
             }
@@ -176,6 +192,7 @@ namespace WpfApp1
             GetCountries();
             GetMVPs();
             GetAllStars();
+            GetDefensivePlayer();
         }
     }
 

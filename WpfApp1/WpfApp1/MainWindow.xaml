@@ -70,25 +70,29 @@
                     <Controls:RangeSlider x:Name="WeightSlider" LowerValue="50" UpperValue="250" Height="20" AutoToolTipPlacement="TopLeft" Minimum="50" Maximum="250" MinRangeWidth="10" SmallChange="1"/>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Vertical" Width="150" Margin="10,10,0,0">
+            <StackPanel Orientation="Vertical" Width="175" Margin="10,10,0,0">
                 <StackPanel Orientation="Horizontal">
                     <Label Content="Most Valuable Player" />
-                    <CheckBox  x:Name="MVPCheckBox" Margin="10,6,0,0"/>
+                    <CheckBox  x:Name="MVPCheckBox" Margin="37,6,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                     <Label Content="All Star" />
-                    <CheckBox  x:Name="AllStarCheckBox" Margin="83,6,0,0"/>
+                    <CheckBox  x:Name="AllStarCheckBox" Margin="110,6,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <Label Content="Defensive Player of the Year" />
+                    <CheckBox  x:Name="DPOYCheckBox" Margin="0,6,0,0"/>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Vertical" Width="150" Margin="0,30,0,0">
+            <StackPanel Orientation="Vertical" Width="130" Margin="0,20,0,0">
                 <Button x:Name="ClearFiltersButton" Content="Clear Filters" Height="50" Click="ClearFilters" Margin="10"/>
                 <Button x:Name="SearchButton" Content="Search" Height="50" Click="SearchResults" Margin="10"/>
             </StackPanel>
         </StackPanel>
         <StackPanel x:Name="ResultsPanel" Margin="0,10,0,0" Visibility="Hidden">
-            <TextBlock x:Name="NoResults" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="NoResults" HorizontalAlignment="Center" Foreground="White"/>
             <ListBox x:Name="ResultsListBox" Margin="50,0,50,0"/>
-            <Button x:Name="SeeCardBtn" Content="See card" Margin="10" Click="SeeCard" Height="30"/>
+            <!-- <Button x:Name="SeeCardBtn" Content="See card" Margin="10" Click="SeeCard" Height="30"/> -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
                 <Button x:Name="PreviousBtn" Content="Previous" Margin="10" Click="PreviousPage"/>
                 <TextBlock x:Name="CurrentPageTextBlock" Foreground="White"/>

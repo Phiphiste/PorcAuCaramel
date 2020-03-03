@@ -91,6 +91,12 @@ namespace WpfApp1
             {
                 p.awards.Add("AllStar", model.AllStars[p.full_name]);
             }
+
+            //DPOY
+            if (model.DPOYs.ContainsKey(p.full_name))
+            {
+                p.awards.Add("DPOY", model.DPOYs[p.full_name]);
+            }
            
         }
 
@@ -216,10 +222,20 @@ namespace WpfApp1
                     }
                 }
 
-                //MVP
+                //AllStar
                 if (filters.ContainsKey("AllStar"))
                 {
                     if (!p.awards.ContainsKey("AllStar"))
+                    {
+                        results.Remove(p);
+                        continue;
+                    }
+                }
+
+                //DPOY
+                if (filters.ContainsKey("DPOY"))
+                {
+                    if (!p.awards.ContainsKey("DPOY"))
                     {
                         results.Remove(p);
                         continue;

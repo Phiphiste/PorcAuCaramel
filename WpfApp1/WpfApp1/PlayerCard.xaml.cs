@@ -24,6 +24,7 @@ namespace WpfApp1
         public PlayerCard(Player p)
         {
             InitializeComponent();
+            this.Title = p.full_name;
             player = p;
 
             Name.Text = p.full_name;
@@ -42,9 +43,28 @@ namespace WpfApp1
 
             foreach (KeyValuePair<string,int> a in p.awards)
             {
+                //creation of the listbox item
                 ListBoxItem item = new ListBoxItem();
-                item.Content = a.Key + "x " + a.Value;
-                Awards_.Items.Add(item);
+                item.Content = a.Value + "x " + a.Key;
+                item.Width = 100;
+                item.VerticalAlignment = VerticalAlignment.Center; 
+
+                //creation of the image 
+                Image award_logo = new Image();
+                if (a.Key == "MVP")
+                    award_logo.Source = new BitmapImage(new Uri("https://i.cdn.turner.com/nba/nba/heat/media/kia_mvp_logo.png"));
+                else if (a.Key == "AllStar") award_logo.Source = new BitmapImage(new Uri("https://content.sportslogos.net/logos/6/980/full/4251__nba_all-star_game-alternate-2017.png"));
+                else award_logo.Source = new BitmapImage(new Uri("https://hooptactics.net/premium/defense/common/images/nobasketlogo.png"));
+                award_logo.Height = 40;
+                award_logo.Width = 40;
+
+                //creation of a panel to contain both the text and the image together
+                StackPanel panel = new StackPanel();
+                panel.Orientation = Orientation.Horizontal;
+                panel.Children.Add(award_logo);
+                panel.Children.Add(item);
+                
+                Awards_.Items.Add(panel);
             }
 
             if (p.imageURL != null)
