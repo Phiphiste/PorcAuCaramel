@@ -27,9 +27,29 @@ namespace WpfApp1
             player = p;
 
             Name.Text = p.full_name;
+            Nationality.Text = p.nationality;
+            Height.Text = p.height.ToString() + "cm";
+            Weight.Text = p.weight.ToString() + "kg";
+            Position.Text = p.position;
+            Work_timespan.Text = p.work_period_start + " - " + p.work_period_end;
+
+            foreach (Team t in p.teams)
+            {
+                ListBoxItem item = new ListBoxItem();
+                item.Content = t.teamName +", "+ t.abbreviation;
+                Teams_.Items.Add(item);
+            }
+
+            foreach (KeyValuePair<string,int> a in p.awards)
+            {
+                ListBoxItem item = new ListBoxItem();
+                item.Content = a.Key + "x " + a.Value;
+                Awards_.Items.Add(item);
+            }
+
             if (p.imageURL != null)
-                Photo.Source = new BitmapImage(new Uri(p.imageURL));
-            else Photo.Source = new BitmapImage(new Uri("https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg"));
+                image_player.Source = new BitmapImage(new Uri(p.imageURL));
+            else image_player.Source = new BitmapImage(new Uri("https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg"));
         }
     }
 }

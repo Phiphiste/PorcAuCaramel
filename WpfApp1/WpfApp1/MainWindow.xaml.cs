@@ -198,6 +198,8 @@ namespace WpfApp1
 
             //untick checkBoxes
             ActivePlayerCheckBox.IsChecked = false;
+            AllStarCheckBox.IsChecked = false;
+            MVPCheckBox.IsChecked = false;
         }
 
         public void SeeCard(object sender, RoutedEventArgs e)
