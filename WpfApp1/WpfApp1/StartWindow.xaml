@@ -12,5 +12,6 @@
         <Label x:Name="QSLabel" Content="Query size (no limit if not filled)" Foreground="White" HorizontalAlignment="Center"/>
         <TextBox x:Name="QuerySizeTextBox" Width="150" Background="Transparent" Foreground="White" Margin="10"/>
         <Button x:Name="SearchBtn" Click="Search" Content="Search Players" Width="150" Background="Transparent" BorderBrush="White" BorderThickness="2" Foreground="White"/>
+        <ProgressBar x:Name="Progress" Visibility="Hidden" IsIndeterminate="True" Minimum="0" Maximum="100" Height="20"/>
     </StackPanel>
 </Window>

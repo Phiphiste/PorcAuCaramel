@@ -75,6 +75,12 @@ namespace WpfApp1
                         p.work_period_end = work_period_end;
                     }
                     else p.work_period_end = " ";
+
+                    if (player.image != null)
+                    {
+                        p.imageURL = player.image.value;
+                    }
+                    else p.imageURL = null;
                     
                     //check if the player was a part of an actual nba team, if not he is discarded
                     if (player.membre_de_l__quipe_de_sportLabel != null)
@@ -184,6 +190,7 @@ namespace WpfApp1
         public string nationality { get; set; }
         public string work_period_start { get; set; }
         public string work_period_end { get; set; }
+        public string imageURL { get; set; }
         public List<Team> teams { get; set; }
 
         public Dictionary<string,int> awards { get; set; }

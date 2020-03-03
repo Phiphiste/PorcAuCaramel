@@ -27,6 +27,9 @@ namespace WpfApp1
             player = p;
 
             Name.Text = p.full_name;
+            if (p.imageURL != null)
+                Photo.Source = new BitmapImage(new Uri(p.imageURL));
+            else Photo.Source = new BitmapImage(new Uri("https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg"));
         }
     }
 }

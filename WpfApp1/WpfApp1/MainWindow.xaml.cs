@@ -70,6 +70,7 @@ namespace WpfApp1
                 item.Content = p.full_name;
                 item.BorderBrush = Brushes.Black;
                 item.Height = 30;
+                item.MouseDoubleClick += SeeCard;
                 ResultsListBox.Items.Add(item);
             }
 

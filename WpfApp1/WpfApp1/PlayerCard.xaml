@@ -8,5 +8,6 @@
         Title="PlayerCard" Height="500" Width="300">
     <StackPanel>
         <TextBlock x:Name="Name"/>
+        <Image x:Name="Photo" Source="default.jpg"/>
     </StackPanel>
 </Window>
