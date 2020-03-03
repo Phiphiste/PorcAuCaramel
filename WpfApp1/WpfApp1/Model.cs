@@ -20,7 +20,7 @@ namespace WpfApp1
 
         //Get the players from a wikidata query and store it in the List<Players> attribute
         //param : url of the query
-        public void GetPlayers(string url)
+        public async Task GetPlayers(string url)
         {
             WebClient client = new WebClient();
             client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; ");

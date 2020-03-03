@@ -9,36 +9,36 @@
         Closing="ClosingApp" 
         Title="NBA Browser" Height="700" Width="800">
     <StackPanel>
-    <StackPanel Background="AliceBlue" Width="Auto" Height="170" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-        <StackPanel Width="150">
-            <StackPanel Orientation="Vertical" Margin="0,0,0,0">
-                <Label Content="Full Name" Padding="5,5,5,1" />
+        <StackPanel Background="AliceBlue" Height="170" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="800">
+            <StackPanel Width="150" Margin="30,0,0,0">
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Full Name" Padding="5,5,5,1" />
                     <TextBox  x:Name="FullNameTextBox"
                 Margin="8,0,10.2,5"
                 Padding="5,1,5,5" />
-            </StackPanel>
-            <StackPanel Orientation="Vertical">
-                <Label Content="Nationality" Padding="5,5,5,1" />
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Nationality" Padding="5,5,5,1" />
                     <ComboBox  x:Name="NationalityComboBox" SelectedValue=" " ItemsSource="{Binding Countries}" Margin="8,0,10,5" Padding="5,1,5,5">
                     </ComboBox>
                 </StackPanel>
-            <StackPanel Orientation="Vertical">
-                <Label Content="Year of birth" Padding="5,5,5,1" />
-                <TextBox  x:Name="BirthdateTextBox"
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Year of birth" Padding="5,5,5,1" />
+                    <TextBox  x:Name="BirthdateTextBox"
                     Margin="10,0,10.2,5"
                     Padding="5,1,5,5" />
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
-        <StackPanel Margin="0" Width="150">
-            <StackPanel Orientation="Vertical">
-                <Label Content="Team" Padding="5,5,5,1" />
-                <ComboBox  x:Name="TeamComboBox"
+            <StackPanel Margin="0" Width="150">
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Team" Padding="5,5,5,1" />
+                    <ComboBox  x:Name="TeamComboBox"
                     ItemsSource="{Binding Teams}" DisplayMemberPath="teamName"
                     Margin="10,0,10.2,5"
                     Padding="5,1,5,5" />
-            </StackPanel>
-            <StackPanel Orientation="Vertical">
-                <Label Content="Position" Padding="5,5,5,1" />
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Position" Padding="5,5,5,1" />
                     <ComboBox  x:Name="PositionComboBox" Margin="10,0,10.2,5" Padding="5,1,5,5">
                         <ComboBoxItem>Point Guard</ComboBoxItem>
                         <ComboBoxItem>Shooting Guard</ComboBoxItem>
@@ -47,11 +47,11 @@
                         <ComboBoxItem>Center</ComboBoxItem>
                     </ComboBox>
                 </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Active Player" />
-                <CheckBox  x:Name="ActivePlayerCheckBox" Margin="15,6,0,0"/>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Active Player" />
+                    <CheckBox  x:Name="ActivePlayerCheckBox" Margin="15,6,0,0"/>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
             <StackPanel Width="150">
                 <StackPanel Orientation="Vertical">
                     <Label Content="Height" Padding="5,5,5,1" />
@@ -91,9 +91,9 @@
             <Button x:Name="SeeCardBtn" Content="See card" Margin="10" Click="SeeCard" Height="30"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
                 <Button x:Name="PreviousBtn" Content="Previous" Margin="10" Click="PreviousPage"/>
-                <TextBlock x:Name="CurrentPageTextBlock"/>
+                <TextBlock x:Name="CurrentPageTextBlock" Foreground="White"/>
                 <Button x:Name="NextBtn" Content="Next" Margin="10" Click="NextPage"/>
             </StackPanel>
         </StackPanel>
-        </StackPanel>
+    </StackPanel>
 </Window>

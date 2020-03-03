@@ -43,6 +43,10 @@ namespace WpfApp1
             this.DataContext = new VM(querySize);
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             SearchResults(null, null);
+            ImageBrush myBrush = new ImageBrush();
+            myBrush.ImageSource = new BitmapImage(new Uri("../../background.jpg", UriKind.Relative));
+            myBrush.Opacity = 0.5;
+            this.Background = myBrush;
         }
 
         public void DisplayCurrentPage()
