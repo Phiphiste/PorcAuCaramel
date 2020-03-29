@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 
 namespace WpfApp1
 {
-    class Model
+    public class Model
     {
         public List<string> Countries = new List<string>();
         public List<Player> Players = new List<Player>();

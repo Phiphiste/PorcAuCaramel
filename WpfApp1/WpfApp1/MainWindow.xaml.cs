@@ -37,10 +37,10 @@ namespace WpfApp1
         //Dictionary of filters
         public Dictionary<string, string> filters = new Dictionary<string, string>();
 
-        public MainWindow(int querySize)
+        public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new VM(querySize);
+            this.DataContext = new VM();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             SearchResults(null, null);
             ImageBrush myBrush = new ImageBrush();

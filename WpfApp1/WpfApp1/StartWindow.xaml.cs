@@ -30,21 +30,9 @@ namespace WpfApp1
 
         public void Search(object sender, RoutedEventArgs e)
         {
-            Progress.Visibility = Visibility.Visible;
-            int qs = 0;
-            bool success = Int32.TryParse(QuerySizeTextBox.Text, out qs);
-            if (success || QuerySizeTextBox.Text == String.Empty)
-            {
-                MainWindow mw = new MainWindow(qs);
-                mw.Show();
-                this.Hide();
-            }
-            else
-            {
-                QSLabel.Content = "Error : not a number. Please try again";
-                QSLabel.Foreground = Brushes.Red;
-                Progress.Visibility = Visibility.Hidden;
-            } 
+            MainWindow mw = new MainWindow();
+            mw.Show();
+            this.Hide();
         }
     }
 }
